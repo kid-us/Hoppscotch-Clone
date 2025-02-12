@@ -1,4 +1,6 @@
 import { Search, Download, CircleUserRound, CloudUpload } from "lucide-react";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 const Navbar = () => {
   return (
@@ -26,9 +28,24 @@ const Navbar = () => {
       </div>
 
       <div className="col-span-2 flex justify-between items-center">
-        <div className="flex text-gray-200 gap-x-4">
-          <Download size={17} />
-          <CircleUserRound size={17} />
+        <div className="flex items-center text-gray-200 gap-x-4">
+          <Tippy
+            content={<span className="text-[10px]">Install App</span>}
+            theme="light"
+          >
+            <button>
+              <Download size={17} />
+            </button>
+          </Tippy>
+
+          <Tippy
+            content={<span className="text-[10px]">Support ?</span>}
+            theme="light"
+          >
+            <button>
+              <CircleUserRound size={17} />
+            </button>
+          </Tippy>
         </div>
         <div className="flex space-x-2 items-center">
           <button className="flex items-center justify-center font-semibold transition rounded px-4 py-2 hover:text-emerald-600  h-8 border border-emerald-600/25 bg-emerald-500/10 !text-emerald-500 hover:border-emerald-600/20 hover:bg-emerald-600/20 focus-visible:border-emerald-600/20 focus-visible:bg-emerald-600/20 text-xs">
