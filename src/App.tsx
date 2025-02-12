@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   const [leftWidth, setLeftWidth] = useState(950); // Initial width for left div
@@ -40,8 +41,10 @@ function App() {
     <div className="h-screen">
       <Navbar />
       <div className="flex w-full h-[89dvh] border border-gray-700/30">
-        {/* Left Fixed Panel (Optional) */}
-        <div className="w-13" style={{ height: "33.3333%" }}></div>
+        {/* Sidebar */}
+        <div className="w-13" style={{ height: "33.3333%" }}>
+          <Sidebar />
+        </div>
 
         {/* Resizable Container */}
         <div
