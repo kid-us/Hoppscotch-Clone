@@ -1,0 +1,47 @@
+import { Search, Download, CircleUserRound, CloudUpload } from "lucide-react";
+
+const Navbar = () => {
+  return (
+    <div className="grid grid-cols-5 p-2 gap-x-4">
+      <div className="col-span-2">
+        <a href="/" className="uppercase text-[13px] font-bold ms-3">
+          hoppscotch
+        </a>
+      </div>
+
+      <div className="col-span-1">
+        <div className="flex justify-between items-center">
+          <button className="relative flex flex-1 cursor-text items-center justify-between self-stretch rounded px-3 hover:text-gray-400 text-zinc-500 transition overflow-hidden h-8 hover:bg-search-bg-hover bg-search-bg">
+            <div className="flex items-center space-x-2 font-semibold">
+              <Search size={16} />
+              <span className="text-xs font-semibold">Search</span>
+            </div>
+
+            <div className="flex space-x-2">
+              <span className="rounded bg-zinc-900 px-1 text-[10px]">Ctrl</span>
+              <span className="rounded bg-zinc-900 px-1 text-[10px]">K</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div className="col-span-2 flex justify-between items-center">
+        <div className="flex text-gray-200 gap-x-4">
+          <Download size={17} />
+          <CircleUserRound size={17} />
+        </div>
+        <div className="flex space-x-2 items-center">
+          <button className="flex items-center justify-center font-semibold transition rounded px-4 py-2 hover:text-emerald-600  h-8 border border-emerald-600/25 bg-emerald-500/10 !text-emerald-500 hover:border-emerald-600/20 hover:bg-emerald-600/20 focus-visible:border-emerald-600/20 focus-visible:bg-emerald-600/20 text-xs">
+            <CloudUpload className="me-2" size={14} />
+            <span className="font-bold">Save My Workspace</span>
+          </button>
+          <button className="text-xs bg-btn hover:bg-btn-hover py-1 px-5 font-semibold h-8 rounded">
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
