@@ -1,16 +1,18 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Sidebar from "./components/Sidebar/Sidebar";
+import RightPanel from "./components/Panel/RightPanel";
 
 function App() {
-  const [leftWidth, setLeftWidth] = useState(950); // Initial width for left div
+  const [leftWidth, setLeftWidth] = useState(75);
+  const [rightWidth, setRightWidth] = useState(25);
   const containerRef = useRef<HTMLDivElement>(null);
   const isResizing = useRef(false);
 
-  const MIN_WIDTH = 950;
-  const MAX_WIDTH = 1080;
+  const MIN_WIDTH = 64.9;
+  const MAX_WIDTH = 75;
 
   const startResizing = () => {
     isResizing.current = true;
@@ -22,27 +24,34 @@ function App() {
     if (!isResizing.current || !containerRef.current) return;
 
     const containerRect = containerRef.current.getBoundingClientRect();
-    let newLeftWidth = e.clientX - containerRect.left;
+    const containerWidth = containerRect.width;
+    const newLeftWidth =
+      ((e.clientX - containerRect.left) / containerWidth) * 100;
 
     // Enforce min/max width
-    if (newLeftWidth < MIN_WIDTH) newLeftWidth = MIN_WIDTH;
-    if (newLeftWidth > MAX_WIDTH) newLeftWidth = MAX_WIDTH;
-
-    setLeftWidth(newLeftWidth);
+    if (newLeftWidth < MIN_WIDTH) setLeftWidth(MIN_WIDTH);
+    else if (newLeftWidth > MAX_WIDTH) setLeftWidth(MAX_WIDTH);
+    else setLeftWidth(newLeftWidth);
   };
 
   const stopResizing = () => {
     isResizing.current = false;
-    document.removeEventListener("mousemove", handleResize);
+    // document.removeEventListener("mousemove", handleResize);
     document.removeEventListener("mouseup", stopResizing);
   };
 
+  useEffect(() => {
+    if (containerRef.current) {
+      setRightWidth(100 - leftWidth);
+    }
+  }, [leftWidth]);
+
   return (
-    <div className="h-screen">
+    <div className="h-screen w-screen">
       <Navbar />
-      <div className="flex w-full h-[89dvh] border border-gray-700/30">
+      <div className="flex w-full h-[89dvh] border border-gray-700/30 overflow-auto">
         {/* Sidebar */}
-        <div className="w-13" style={{ height: "33.3333%" }}>
+        <div className="w-13" style={{ height: "34%" }}>
           <Sidebar />
         </div>
 
@@ -52,23 +61,17 @@ function App() {
           className="flex w-full border-l border-gray-700/30"
         >
           {/* Left Panel */}
-          <div
-            style={{ width: leftWidth }}
-            className="p-4 flex items-center justify-center"
-          >
-            Left Panel
-          </div>
+          <div style={{ width: `${leftWidth}%` }}>{/* <p>Left</p> */}</div>
 
           {/* Resizer */}
           <div
             onMouseDown={startResizing}
-            className="w-2 cursor-ew-resize bg-gray-500 hover:bg-gray-600 transition-colors"
-            style={{ height: "100%" }}
+            className="hover:w-[5px] w-[2px] bg-zinc-800/60 cursor-col-resize hover:bg-btn transition-colors h-full"
           />
 
           {/* Right Panel */}
-          <div className="flex-1 p-4 flex items-center justify-center">
-            Right Panel
+          <div style={{ width: `${rightWidth}%` }}>
+            <RightPanel />
           </div>
         </div>
       </div>
