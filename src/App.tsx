@@ -3,7 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Sidebar from "./components/Sidebar/Sidebar";
-import RightPanel from "./components/Panel/RightPanel";
+import RightPanel from "./components/RightPanel/RightPanel";
 
 function App() {
   const [leftWidth, setLeftWidth] = useState(75);
@@ -55,13 +55,13 @@ function App() {
           <Sidebar />
         </div>
 
-        {/* Resizable Container */}
+        {/* Container */}
         <div
           ref={containerRef}
           className="flex w-full border-l border-gray-700/30"
         >
           {/* Left Panel */}
-          <div style={{ width: `${leftWidth}%` }}>{/* <p>Left</p> */}</div>
+          <div style={{ width: `${leftWidth}%` }}></div>
 
           {/* Resizer */}
           <div

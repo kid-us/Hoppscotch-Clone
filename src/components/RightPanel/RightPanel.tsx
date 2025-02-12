@@ -1,6 +1,6 @@
 import { ChevronRight, Plus, CircleHelp, FolderDown } from "lucide-react";
-import RSidebar from "./Right/RSidebar";
 import IconButton from "../IconButton/IconButton";
+import RSidebar from "./RSidebar";
 
 const RightPanel = () => {
   return (

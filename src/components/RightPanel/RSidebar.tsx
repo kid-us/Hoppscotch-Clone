@@ -1,5 +1,5 @@
 import { Share2, Code, Folder, Layers, Clock3 } from "lucide-react";
-import IconButton from "../../IconButton/IconButton";
+import IconButton from "../IconButton/IconButton";
 
 const RSidebar = () => {
   return (
