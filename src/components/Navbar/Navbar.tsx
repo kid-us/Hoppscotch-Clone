@@ -13,7 +13,7 @@ const Navbar = () => {
 
       <div className="col-span-1">
         <div className="flex justify-between items-center">
-          <button className="relative flex flex-1 cursor-text items-center justify-between self-stretch rounded px-3 hover:text-gray-400 text-zinc-500 transition overflow-hidden h-8 hover:bg-search-bg-hover bg-search-bg">
+          <button className="relative flex flex-1 cursor-text items-center justify-between self-stretch rounded px-2 hover:text-gray-400 text-zinc-500 transition overflow-hidden h-8 hover:bg-search-bg-hover bg-search-bg">
             <div className="flex items-center space-x-2 font-semibold">
               <Search size={16} />
               <span className="text-xs font-semibold">Search</span>
@@ -28,31 +28,37 @@ const Navbar = () => {
       </div>
 
       <div className="col-span-2 flex justify-between items-center">
-        <div className="flex items-center text-gray-200 gap-x-4">
+        <div className="flex items-center gap-x-4">
           <Tippy
-            content={<span className="text-[10px]">Install App</span>}
+            content={
+              <span className="text-[10px] font-semibold">Install App</span>
+            }
             theme="light"
           >
-            <button>
+            <button className="text-gray-400 hover:text-white">
               <Download size={17} />
             </button>
           </Tippy>
 
           <Tippy
-            content={<span className="text-[10px]">Support ?</span>}
+            content={
+              <span className="text-[10px] font-semibold">Support ?</span>
+            }
             theme="light"
           >
-            <button>
+            <button className="text-gray-400 hover:text-white">
               <CircleUserRound size={17} />
             </button>
           </Tippy>
         </div>
+
         <div className="flex space-x-2 items-center">
-          <button className="flex items-center justify-center font-semibold transition rounded px-4 py-2 hover:text-emerald-600  h-8 border border-emerald-600/25 bg-emerald-500/10 !text-emerald-500 hover:border-emerald-600/20 hover:bg-emerald-600/20 focus-visible:border-emerald-600/20 focus-visible:bg-emerald-600/20 text-xs">
+          <button className="flex items-center justify-center font-semibold transition rounded px-4 py-2 hover:text-emerald-600 h-8 border border-emerald-600/25 bg-emerald-500/10 !text-emerald-500 hover:border-emerald-600/20 hover:bg-emerald-600/20 focus-visible:border-emerald-600/20 focus-visible:bg-emerald-600/20 text-xs">
             <CloudUpload className="me-2" size={14} />
             <span className="font-bold">Save My Workspace</span>
           </button>
-          <button className="text-xs bg-btn hover:bg-btn-hover py-1 px-5 font-semibold h-8 rounded">
+
+          <button className="text-xs bg-btn hover:bg-btn-hover py-1 px-4 font-bold h-8 rounded">
             Login
           </button>
         </div>

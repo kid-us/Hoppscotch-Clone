@@ -33,3 +33,18 @@ body {
     @apply cursor-pointer;
   }
 }
+
+/* Force Light Theme for Tippy */
+.tippy-box[data-theme~="light"] {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid #ddd !important;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1) !important;
+  padding: 2px 6px !important;
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+}
+
+.tippy-box[data-theme~="light"] .tippy-arrow {
+  color: white !important;
+}
