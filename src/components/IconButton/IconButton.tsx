@@ -5,16 +5,17 @@ interface Props {
   children: ReactNode;
   name: string;
   direction?: "top" | "bottom" | "left" | "right";
+  height?: string;
 }
 
-const IconButton = ({ children, direction = "right", name }: Props) => {
+const IconButton = ({ children, direction = "right", name, height }: Props) => {
   return (
     <Tippy
       content={<span className="text-[10px] font-semibold">{name}</span>}
       placement={direction}
       theme="light"
     >
-      <button className="h-10 text-gray-400 hover:text-white">
+      <button className={`${height && height} text-gray-400 hover:text-white`}>
         {children}
       </button>
     </Tippy>

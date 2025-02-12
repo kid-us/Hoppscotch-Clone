@@ -4,23 +4,23 @@ import IconButton from "../../IconButton/IconButton";
 const RSidebar = () => {
   return (
     <>
-      <IconButton name="Collections" direction="left">
+      <IconButton name="Collections" direction="left" height="h-10">
         <Folder size={18} className="text-btn" />
       </IconButton>
 
-      <IconButton name="Environments" direction="left">
+      <IconButton name="Environments" direction="left" height="h-10">
         <Layers size={18} />
       </IconButton>
 
-      <IconButton name="History" direction="left">
+      <IconButton name="History" direction="left" height="h-10">
         <Clock3 size={18} />
       </IconButton>
 
-      <IconButton name="Shared Requests" direction="left">
+      <IconButton name="Shared Requests" direction="left" height="h-10">
         <Share2 size={18} />
       </IconButton>
 
-      <IconButton name="Generated Code" direction="left">
+      <IconButton name="Generated Code" direction="left" height="h-10">
         <Code size={18} />
       </IconButton>
     </>

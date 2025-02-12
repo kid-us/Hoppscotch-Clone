@@ -8,34 +8,19 @@ import {
   PanelLeftOpen,
   CircleHelp,
 } from "lucide-react";
+import IconButton from "../IconButton/IconButton";
 
 const Footer = () => {
   return (
     <>
       <div className="flex items-center space-x-4">
-        <Tippy
-          content={
-            <span className="text-[10px] font-semibold">Expand Sidebar</span>
-          }
-          placement="top"
-          theme="light"
-        >
-          <button className="text-gray-400 hover:text-white">
-            <PanelRight size={17} />
-          </button>
-        </Tippy>
+        <IconButton name="Expand Sidebar" direction="top">
+          <PanelRight size={17} />
+        </IconButton>
 
-        <Tippy
-          content={
-            <span className="text-[10px] font-semibold">Interceptor</span>
-          }
-          placement="top"
-          theme="light"
-        >
-          <button className="text-gray-400 hover:text-white">
-            <ShieldCheck size={17} />
-          </button>
-        </Tippy>
+        <IconButton name="Interceptor" direction="top">
+          <ShieldCheck size={17} />
+        </IconButton>
       </div>
 
       <div className="flex items-center space-x-4">
@@ -60,39 +45,17 @@ const Footer = () => {
           </button>
         </Tippy>
 
-        <Tippy
-          content={<span className="text-[10px] font-semibold">Share</span>}
-          placement="top"
-          theme="light"
-        >
-          <button className="text-gray-400 hover:text-white">
-            <Share2 size={17} />
-          </button>
-        </Tippy>
+        <IconButton name="Share" direction="top">
+          <Share2 size={17} />
+        </IconButton>
 
-        <Tippy
-          content={
-            <span className="text-[10px] font-semibold">Horizontal Layout</span>
-          }
-          placement="top"
-          theme="light"
-        >
-          <button className="text-gray-400 hover:text-white">
-            <Columns2 size={17} />
-          </button>
-        </Tippy>
+        <IconButton name="Horizontal Layout" direction="top">
+          <Columns2 size={17} />
+        </IconButton>
 
-        <Tippy
-          content={
-            <span className="text-[10px] font-semibold">Collapse Sidebar</span>
-          }
-          placement="top"
-          theme="light"
-        >
-          <button className="text-gray-400 hover:text-white">
-            <PanelLeftOpen size={17} />
-          </button>
-        </Tippy>
+        <IconButton name="Collapse Sidebar" direction="top">
+          <PanelLeftOpen size={17} />
+        </IconButton>
       </div>
     </>
   );
