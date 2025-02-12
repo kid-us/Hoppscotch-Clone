@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+body {
+  background-color: #181818;
+
+  /* color: #10b07b; btn */
+  /* background-color: #6366f1;  btn*/
+
+  /* green-btn: #182923; */
+
+  color: #fff;
+}
+
+:root {
+  --accent-light-color: #818cf8;
+  --accent-dark-color: #4f46e5;
+  --accent-contrast-color: #fff;
+  --gradient-from-color: #818cf8;
+  --gradient-via-color: #6366f1;
+  --gradient-to-color: #4f46e5;
+}
