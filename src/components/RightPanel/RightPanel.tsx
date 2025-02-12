@@ -10,7 +10,7 @@ const RightPanel = () => {
       </div>
 
       <div className="w-full">
-        <div className="flex items-center border-b border-zinc-800/80 pb-3 pt-1 px-3">
+        <div className="flex items-center border-b border-zinc-800/80 pb-2 pt-2 px-3">
           <p className="text-[11px] text-stone-500">Personal Workspace</p>
           <p>
             <ChevronRight size={14} className="text-stone-500 mx-3 mt-[1px]" />

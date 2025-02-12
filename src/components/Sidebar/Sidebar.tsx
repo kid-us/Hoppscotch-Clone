@@ -7,7 +7,7 @@ const Sidebar = () => {
       <IconButton
         name="Rest"
         direction="right"
-        height="flex justify-center items-center border-l-[3px] border-btn h-12 w-full bg-search-bg"
+        height="flex justify-center items-center border-l-[3px] border-btn h-13 w-full bg-search-bg-hover text-white"
       >
         <Link2 size={17} />
       </IconButton>
@@ -15,7 +15,7 @@ const Sidebar = () => {
       <IconButton
         name="GraphQL"
         direction="right"
-        height="flex justify-center items-center h-12 w-full hover:bg-search-bg"
+        height="flex justify-center items-center h-13 w-full hover:bg-search-bg"
       >
         <Hexagon size={17} />
       </IconButton>
@@ -23,7 +23,7 @@ const Sidebar = () => {
       <IconButton
         name="Realtime"
         direction="right"
-        height="flex justify-center items-center h-12 w-full hover:bg-search-bg"
+        height="flex justify-center items-center h-13 w-full hover:bg-search-bg"
       >
         <Globe size={17} />
       </IconButton>
@@ -31,7 +31,7 @@ const Sidebar = () => {
       <IconButton
         name="Settings"
         direction="right"
-        height="flex justify-center items-center h-12 w-full hover:bg-search-bg"
+        height="flex justify-center items-center h-13 w-full hover:bg-search-bg"
       >
         <Settings size={17} />
       </IconButton>

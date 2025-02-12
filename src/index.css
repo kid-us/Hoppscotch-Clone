@@ -18,6 +18,7 @@ body {
 }
 
 @theme {
+  --color-primary: #181818;
   --color-search-bg: #262626;
   --color-search-bg-hover: #1f1f20;
   --color-btn: #6366f1;
@@ -47,4 +48,23 @@ body {
 
 .tippy-box[data-theme~="light"] .tippy-arrow {
   color: white !important;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #39393a;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7a7a7e;
+  border-radius: 50px;
 }

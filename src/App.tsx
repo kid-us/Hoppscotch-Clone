@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Sidebar from "./components/Sidebar/Sidebar";
 import RightPanel from "./components/RightPanel/RightPanel";
+import RouteHeader from "./components/LeftPanel/RouteHeader";
 
 function App() {
   const [leftWidth, setLeftWidth] = useState(75);
@@ -61,7 +62,9 @@ function App() {
           className="flex w-full border-l border-gray-700/30"
         >
           {/* Left Panel */}
-          <div style={{ width: `${leftWidth}%` }}></div>
+          <div style={{ width: `${leftWidth}%` }}>
+            <RouteHeader />
+          </div>
 
           {/* Resizer */}
           <div
