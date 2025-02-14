@@ -50,7 +50,7 @@ function App() {
   return (
     <div className="h-screen w-screen">
       <Navbar />
-      <div className="flex w-full h-[89dvh] border border-gray-700/30 overflow-auto">
+      <div className="flex w-full h-[89dvh] border border-gray-700/30 overflow-hidden">
         {/* Sidebar */}
         <div className="w-12" style={{ height: "34%" }}>
           <Sidebar />

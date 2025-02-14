@@ -28,6 +28,7 @@ const RouteHeader = () => {
   const [history, setHistory] = useState<MethodsHistory[]>([
     { id: 1, method: "GET", title: "Untitled", url: "" },
   ]);
+
   const [activeTab, setActiveTap] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -301,7 +302,7 @@ const RouteHeader = () => {
       </div>
 
       {/* REQUEST SECTION */}
-      <div className="px-4 py-3">
+      <div className="py-3">
         <RequestSection />
       </div>
     </>
