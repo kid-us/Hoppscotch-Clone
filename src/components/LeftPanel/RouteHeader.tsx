@@ -3,6 +3,7 @@ import IconButton from "../IconButton/IconButton";
 import { useEffect, useRef, useState } from "react";
 import Tippy from "@tippyjs/react";
 import RequestSection from "./RequestSection";
+import useRequestStore from "../../store/store";
 
 interface MethodsHistory {
   id: number;
@@ -47,6 +48,8 @@ const RouteHeader = () => {
       });
     }
   }, [history]);
+
+  const { requested } = useRequestStore();
 
   // Add History
   const addHistory = () => {
@@ -247,8 +250,11 @@ const RouteHeader = () => {
               theme="light"
               delay={300}
             >
-              <button className="px-4 font-bold text-center text-xs bg-btn hover:bg-btn-hover w-full h-full rounded-l">
-                Send
+              <button
+                onClick={() => requested()}
+                className="px-4 font-bold text-center text-xs bg-btn hover:bg-btn-hover w-full h-full rounded-l"
+              >
+                Sends
               </button>
             </Tippy>
 
