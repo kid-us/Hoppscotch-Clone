@@ -2,6 +2,7 @@ import { ChevronDown, Eye, Layers, Plus, Save, X } from "lucide-react";
 import IconButton from "../IconButton/IconButton";
 import { useEffect, useRef, useState } from "react";
 import Tippy from "@tippyjs/react";
+import RequestSection from "./RequestSection";
 
 interface MethodsHistory {
   id: number;
@@ -98,7 +99,7 @@ const RouteHeader = () => {
   return (
     <>
       {/* HEADERS and TAPS SECTION */}
-      <div className="bg-search-bg-hover h-[45px] pe-3">
+      <div className="bg-search-bg-hover h-[46px] pe-3">
         <div className="grid grid-cols-9">
           <div className="flex  items-center h-[50px] relative col-span-7">
             <div
@@ -154,7 +155,7 @@ const RouteHeader = () => {
             </button>
           </div>
 
-          <div className="col-span-2 flex justify-end space-x-5 items-center h-13">
+          <div className="col-span-2 flex justify-end space-x-5 items-center h-[46px]">
             <IconButton direction="top" name="Select environment">
               <div className="flex items-center space-x-8">
                 <div className="flex space-x-2 items-center">
@@ -297,6 +298,11 @@ const RouteHeader = () => {
             </Tippy>
           </div>
         </div>
+      </div>
+
+      {/* REQUEST SECTION */}
+      <div className="px-4 py-3">
+        <RequestSection />
       </div>
     </>
   );

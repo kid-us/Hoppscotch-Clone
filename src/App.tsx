@@ -52,7 +52,7 @@ function App() {
       <Navbar />
       <div className="flex w-full h-[89dvh] border border-gray-700/30 overflow-auto">
         {/* Sidebar */}
-        <div className="w-13" style={{ height: "34%" }}>
+        <div className="w-12" style={{ height: "34%" }}>
           <Sidebar />
         </div>
 
