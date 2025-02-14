@@ -124,8 +124,8 @@ const QueryParameterComponent = () => {
           {/* Actions */}
           <div className="flex space-x-1 border-r border-t border-b border-search-bg px-2">
             <Tippy content="Turn Off" placement="top" theme="light">
-              <button className="text-zinc-400 hover:text-white px-1">
-                <CircleCheckBig size={16} color="green" />
+              <button className="text-green-400 px-1">
+                <CircleCheckBig size={16} />
               </button>
             </Tippy>
 
@@ -133,9 +133,9 @@ const QueryParameterComponent = () => {
               <Tippy content="Remove" placement="top" theme="light">
                 <button
                   onClick={() => removeParameter(param.id)}
-                  className="text-zinc-400 hover:text-white border-l border-search-bg ps-2"
+                  className="text-red-400 border-l border-search-bg ps-2"
                 >
-                  <Trash size={16} color="red" />
+                  <Trash size={16} />
                 </button>
               </Tippy>
             </div>

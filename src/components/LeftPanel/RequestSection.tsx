@@ -98,7 +98,10 @@ const RequestSection = () => {
           onMouseDown={startResizing}
         ></div>
 
-        <div style={{ height: `${bottomHeight}%` }} className="px-4 py-2">
+        <div
+          style={{ height: `${bottomHeight}%` }}
+          className="px-4 py-2 overflow-y-scroll"
+        >
           <Response />
         </div>
       </div>

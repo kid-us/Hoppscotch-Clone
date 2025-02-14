@@ -26,7 +26,12 @@ const methods = [
 
 const RouteHeader = () => {
   const [history, setHistory] = useState<MethodsHistory[]>([
-    { id: 1, method: "GET", title: "Untitled", url: "" },
+    {
+      id: 1,
+      method: "GET",
+      title: "Untitled",
+      url: "https://echo.hoppscotch.io",
+    },
   ]);
 
   const [activeTab, setActiveTap] = useState(1);
