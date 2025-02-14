@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Tabs } from "./RequestSection";
+import IconButton from "../IconButton/IconButton";
+import { Copy, Download, Ellipsis, Filter, Save, WrapText } from "lucide-react";
 
 const Response = () => {
   const responseHeader: Tabs[] = [
@@ -66,7 +68,7 @@ const Response = () => {
   const lines = formatJsonLines(jsonData);
 
   return (
-    <div className="overflow-y-scroll">
+    <div className="">
       <div className="flex space-x-4">
         {responseHeader.map((r) => (
           <button
@@ -83,31 +85,70 @@ const Response = () => {
         ))}
       </div>
 
-      <div className="rounded-md ove h-full overflow-scroll">
-        <h2 className="mb-2 text-lg font-semibold">HTTP Request Example</h2>
+      <div className="flex justify-between">
+        <h2 className="mt-4 mb-3 font-semibold text-xs text-zinc-500">
+          Response Body
+        </h2>
+
+        <div className="flex space-x-5">
+          <IconButton name="Wrap Lines" direction="top">
+            <button className="text-blue-500 hover:text-white">
+              <WrapText size={16} />
+            </button>
+          </IconButton>
+          <IconButton name="Filter" direction="top">
+            <button className="text-zinc-500 hover:text-white">
+              <Filter size={16} />
+            </button>
+          </IconButton>
+          <IconButton name="Download File" direction="top">
+            <button className="text-zinc-500 hover:text-white">
+              <Download size={16} />
+            </button>
+          </IconButton>
+          <IconButton name="Save" direction="top">
+            <button className="text-zinc-500 hover:text-white">
+              <Save size={16} />
+            </button>
+          </IconButton>
+          <IconButton name="Save" direction="top">
+            <button className="text-zinc-500 hover:text-white">
+              <Copy size={16} />
+            </button>
+          </IconButton>
+          <IconButton name="Copy Link" direction="top">
+            <button className="text-zinc-500 hover:text-white">
+              <Ellipsis size={16} />
+            </button>
+          </IconButton>
+        </div>
+      </div>
+
+      {/* Response */}
+      <div className="border border-search-bg pt-3 h-96 pb-24 overflow-y-scroll">
         {lines.map((line, index) => (
           <div key={index} className="flex items-start">
             <div className="w-10  text-gray-500 text-xs text-center">
               {index + 1}
             </div>
-            <div className="pl-3 border-l border-search-bg">
+            <div className="pl-3 border-l border-search-bg leading-5">
               {line.split(/("[^"]*":)/g).map((part, idx) =>
                 part.match(/^"/) ? (
                   <span
                     key={idx}
-                    className="text-blue-400 text-sm font-bold pl-4"
+                    className="text-blue-400 text-[13px] font-semibold pl-4"
                   >
                     {part}
                   </span>
                 ) : part.match(/".*"/) ? (
                   <span
                     key={idx}
-                    className="text-purple-400 text-sm font-semibold pl-4"
+                    className="text-purple-400 text-[13px] font-semibold pl-4"
                   >
                     {part}
                   </span>
                 ) : (
-                  <span key={idx} className="text-white  pl-4">
+                  <span key={idx} className="text-white text-[13px] pl-4">
                     {part}
                   </span>
                 )
