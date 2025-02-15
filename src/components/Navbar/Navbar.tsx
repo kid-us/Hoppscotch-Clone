@@ -51,7 +51,7 @@ const Navbar = () => {
               }
               theme="light"
             >
-              <button className="text-gray-400 hover:text-white">
+              <button className="lg:block hidden text-gray-400 hover:text-white">
                 <Download size={17} />
               </button>
             </Tippy>

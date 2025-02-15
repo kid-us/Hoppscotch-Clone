@@ -187,7 +187,7 @@ const RouteHeader = () => {
       {/* METHODS and URL SECTION */}
       <div className="lg:px-4 px-2 py-3">
         <div className="grid lg:grid-cols-9 grid-cols-2 h-9 gap-x-2">
-          <div className="lg:col-span-7 col-span-2 grid grid-cols-7 bg-search-bg-hover rounded">
+          <div className="lg:col-span-7 col-span-3 grid grid-cols-7 bg-search-bg-hover rounded">
             {/* Methods */}
             <div className="relative lg:col-span-1 col-span-2 lg:ps-4 ps-2">
               <div
@@ -236,7 +236,7 @@ const RouteHeader = () => {
           </div>
 
           {/* Send */}
-          <div className="flex lg:mt-0 mt-2 lg:h-full h-8 justify-between items-center">
+          <div className="col-span-2 flex lg:mt-0 mt-2 lg:h-full h-8 justify-between items-center">
             <Tippy
               content={
                 <span className="text-[10px] font-semibold">
@@ -272,7 +272,7 @@ const RouteHeader = () => {
             </Tippy>
           </div>
           {/* Save */}
-          <div className="flex lg:mt-0 mt-2 lg:h-full h-8 items-center justify-between bg-search-bg-hover rounded">
+          <div className="col-span-1 flex lg:mt-0 mt-2 lg:h-full h-8 items-center justify-between bg-search-bg-hover rounded">
             <Tippy
               content={
                 <span className="text-[10px] font-semibold">
