@@ -75,8 +75,12 @@ const SearchModal = ({ onClose }: Props) => {
 
   return (
     <>
-      <div className="bg-neutral-800/50 fixed z-30 top-0 left-0 w-full h-[100dvh]"></div>
-      <div className="fixed z-40 top-0 left-0 w-full h-full">
+      <div
+        onClick={() => onClose()}
+        className="bg-neutral-800/50 fixed z-30 top-0 left-0 w-full h-[100dvh]"
+      ></div>
+
+      <div className="fixed z-40 w-full">
         <div className="flex justify-center">
           <div
             className={`relative lg:w-[35%] w-[95%] h-auto bg-primary border-2 border-search-bg rounded-2xl mt-16`}

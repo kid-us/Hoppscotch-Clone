@@ -10,7 +10,11 @@ const Navbar = () => {
   return (
     <>
       {/* Search Modal */}
-      {search && <SearchModal onClose={() => setSearch(false)} />}
+      {search && (
+        <SearchModal
+          onClose={() => setSearch(false)}
+        />
+      )}
 
       <header className="grid grid-cols-5 p-2 gap-x-4 h-[6.5dvh]">
         <div className="col-span-2">
