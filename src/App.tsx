@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div className="h-screen w-screen">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="flex w-full h-[89dvh] border border-gray-700/30 overflow-hidden">
         {/* Sidebar */}
         <div className="lg:block hidden w-12" style={{ height: "34%" }}>
@@ -68,7 +68,7 @@ function App() {
           </div>
 
           {/* Small Device */}
-          <div className="lg:hidden" style={{ width: `${leftWidth}%` }}>
+          <div className="lg:hidden" style={{ width: `100%` }}>
             <RouteHeader />
           </div>
 

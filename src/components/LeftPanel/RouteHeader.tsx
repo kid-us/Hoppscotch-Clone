@@ -109,8 +109,8 @@ const RouteHeader = () => {
     <>
       {/* HEADERS and TAPS SECTION */}
       <div className="bg-search-bg-hover h-[46px] pe-3">
-        <div className="grid grid-cols-9">
-          <div className="flex items-center h-[50px] relative col-span-7">
+        <div className="grid lg:grid-cols-9 grid-cols-12">
+          <div className="flex items-center lg:h-[50px] h-[40px] relative lg:col-span-7 col-span-8">
             <div
               className="flex items-center h-[50px] overflow-x-auto"
               ref={containerRef}
@@ -147,7 +147,7 @@ const RouteHeader = () => {
                           e.stopPropagation();
                           removeHistory(h.id, index + 1);
                         }}
-                        className="sticky right-0 invisible group-hover:visible"
+                        className="sticky right-0 lg:invisible group-hover:visible"
                       >
                         <X size={14} />
                       </button>
@@ -164,12 +164,12 @@ const RouteHeader = () => {
             </button>
           </div>
 
-          <div className="col-span-2 flex justify-end space-x-5 items-center h-[46px]">
+          <div className="col-span-4 flex justify-end lg:space-x-5 space-x-4 items-center h-[46px]">
             <IconButton direction="top" name="Select environment">
-              <div className="flex items-center space-x-8">
+              <div className="flex items-center lg:space-x-8 space-x-2">
                 <div className="flex space-x-2 items-center">
                   <Layers size={15} />
-                  <span className="text-[13px] font-semibold">
+                  <span className="text-[13px] font-semibold lg:flex hidden">
                     Select environment
                   </span>
                 </div>
@@ -185,19 +185,19 @@ const RouteHeader = () => {
       </div>
 
       {/* METHODS and URL SECTION */}
-      <div className="px-4 py-3">
-        <div className="grid grid-cols-9 h-9 gap-x-2">
-          <div className="col-span-7 grid grid-cols-7 bg-search-bg-hover rounded">
+      <div className="lg:px-4 px-2 py-3">
+        <div className="grid lg:grid-cols-9 grid-cols-2 h-9 gap-x-2">
+          <div className="lg:col-span-7 col-span-2 grid grid-cols-7 bg-search-bg-hover rounded">
             {/* Methods */}
-            <div className="relative col-span-1 ps-4">
+            <div className="relative lg:col-span-1 col-span-2 lg:ps-4 ps-2">
               <div
                 onClick={() => setSeeAllMethod(!seeAllMethods)}
                 className="cursor-pointer flex h-8 items-center justify-between"
               >
-                <button className="text-xs font-bold">
+                <button className="lg:text-xs text-[10px] font-bold">
                   {history[activeTab - 1].method}
                 </button>
-                <ChevronDown size={17} />
+                <ChevronDown size={15} />
               </div>
 
               {/* All Methods */}
@@ -222,10 +222,10 @@ const RouteHeader = () => {
             </div>
 
             {/* Input */}
-            <div className="col-span-6">
+            <div className="lg:col-span-6 col-span-5">
               <input
                 type="text"
-                className="h-full w-full text-xs font-medium ps-5 focus:outline-hidden rounded placeholder:text-[11px] placeholder:text-zinc-500"
+                className="lg:h-full h-9 w-full text-xs font-medium ps-5 focus:outline-hidden rounded placeholder:text-[11px] placeholder:text-zinc-500"
                 placeholder="Enter a uURL or paste a cURL command"
                 value={history[activeTab - 1].url}
                 onChange={(e) =>
@@ -236,7 +236,7 @@ const RouteHeader = () => {
           </div>
 
           {/* Send */}
-          <div className="flex justify-between items-center">
+          <div className="flex lg:mt-0 mt-2 lg:h-full h-8 justify-between items-center">
             <Tippy
               content={
                 <span className="text-[10px] font-semibold">
@@ -272,7 +272,7 @@ const RouteHeader = () => {
             </Tippy>
           </div>
           {/* Save */}
-          <div className="flex h-full items-center justify-between bg-search-bg-hover rounded">
+          <div className="flex lg:mt-0 mt-2 lg:h-full h-8 items-center justify-between bg-search-bg-hover rounded">
             <Tippy
               content={
                 <span className="text-[10px] font-semibold">
