@@ -1,7 +1,15 @@
 import { useState } from "react";
 import { Tabs } from "./RequestSection";
 import IconButton from "../IconButton/IconButton";
-import { Copy, Download, Ellipsis, Filter, Save, WrapText } from "lucide-react";
+import {
+  Copy,
+  CornerDownLeft,
+  Download,
+  Ellipsis,
+  Filter,
+  Save,
+  WrapText,
+} from "lucide-react";
 import useRequestStore from "../../store/store";
 
 const Response = () => {
@@ -72,7 +80,7 @@ const Response = () => {
 
   return (
     <>
-      {isRequested && (
+      {isRequested ? (
         <div className="mt-0">
           <div className="flex space-x-4">
             {responseHeader.map((r) => (
@@ -161,6 +169,55 @@ const Response = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      ) : (
+        <div className="flex justify-center mt-4">
+          <div className="grid grid-cols-2 gap-x-3 space-y-2">
+            <p className="text-center text-zinc-500 text-xs font-medium">
+              Send Request
+            </p>
+            <div className="flex space-x-1">
+              <p className="text-[10px] bg-stone-800 rounded px-2 py-1 text-zinc-500">
+                Ctrl
+              </p>
+              <p className="text-[10px] bg-stone-800 rounded px-2 pt-2 text-zinc-500">
+                <CornerDownLeft size={10} />
+              </p>
+            </div>
+
+            <p className="text-center text-zinc-500 text-xs font-medium">
+              Keyboard shortcuts
+            </p>
+            <div className="flex space-x-1">
+              <p className="text-[10px] bg-stone-800 rounded px-2 py-1 text-zinc-500">
+                Ctrl
+              </p>
+              <p className="text-[10px] bg-stone-800 rounded px-2 py-1 text-zinc-500">
+                K
+              </p>
+            </div>
+
+            <p className="text-center text-zinc-500 text-xs font-medium">
+              Search & command menu
+            </p>
+            <div className="flex space-x-1">
+              <p className="text-[10px] bg-stone-800 rounded px-2 py-1 text-zinc-500">
+                Ctrl
+              </p>
+              <p className="text-[10px] bg-stone-800 rounded px-2 py-1 text-zinc-500">
+                /
+              </p>
+            </div>
+
+            <p className="text-center text-zinc-500 text-xs font-medium">
+              Help menu
+            </p>
+            <div className="flex space-x-1">
+              <p className="text-[10px] bg-stone-800 rounded px-2 py-1 text-zinc-500">
+                ?
+              </p>
+            </div>
           </div>
         </div>
       )}

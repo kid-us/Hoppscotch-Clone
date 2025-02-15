@@ -52,7 +52,7 @@ function App() {
   return (
     <div className="h-screen w-screen overflow-hidden">
       <Navbar />
-      <div className="flex w-full lg:h-[89dvh] h-[93dvh] border border-gray-700/30 overflow-hidden">
+      <div className="flex w-full lg:h-[89dvh] lg:mt-0 mt-1 h-[85dvh] lg:border border-gray-700/30 overflow-hidden">
         {/* Sidebar */}
         {/* Large Device */}
         <div className="lg:block hidden w-12" style={{ height: "34%" }}>
@@ -60,7 +60,7 @@ function App() {
         </div>
 
         {/* Small Device */}
-        <div className="lg:hidden absolute bottom-0 grid grid-cols-4 w-full">
+        <div className="lg:hidden absolute bottom-0 border-t border-gray-700/30 grid grid-cols-4 w-full">
           <IconButton
             name="Rest"
             direction="top"
