@@ -64,7 +64,7 @@ function App() {
           <IconButton
             name="Rest"
             direction="top"
-            height="flex justify-center items-center border-t-[3px] border-btn h-[46px] w-full bg-search-bg-hover text-white"
+            height="flex justify-center items-center border-b-[3px] border-btn h-[46px] w-full bg-search-bg-hover text-white"
           >
             <Link2 size={17} />
           </IconButton>
