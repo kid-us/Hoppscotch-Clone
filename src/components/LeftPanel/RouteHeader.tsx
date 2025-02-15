@@ -254,7 +254,7 @@ const RouteHeader = () => {
                 onClick={() => requested()}
                 className="px-4 font-bold text-center text-xs bg-btn hover:bg-btn-hover w-full h-full rounded-l"
               >
-                Sends
+                Send
               </button>
             </Tippy>
 

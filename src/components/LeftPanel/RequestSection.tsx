@@ -12,7 +12,7 @@ const tabs: Tabs[] = [
   { id: 2, name: "Body" },
   { id: 3, name: "Headers" },
   { id: 4, name: "Authorization" },
-  { id: 5, name: "Pre-request Script" },
+  // { id: 5, name: "Pre-request Script" },
   { id: 6, name: "Tests" },
 ];
 
@@ -57,13 +57,13 @@ const RequestSection = () => {
   return (
     <div>
       {/* Tabs */}
-      <div className="flex justify-between px-4">
+      <div className="flex justify-between overflow-scroll px-4 space-x-4 mt-6 pb-3 scrollbar-hide">
         <div className="flex space-x-4">
           {tabs.map((t) => (
             <button
               key={t.id}
               onClick={() => setTab(t.name)}
-              className={`text-[13px] font-bold hover:text-white ${
+              className={`lg:text-[13px] text-[12px] font-bold hover:text-white ${
                 tap === t.name
                   ? "underline underline-offset-10 decoration-btn decoration-2 text-white"
                   : "text-zinc-500"
@@ -75,7 +75,8 @@ const RequestSection = () => {
         </div>
         {/* Variables */}
         <button
-          className={`text-[13px] font-bold text-zinc-400 hover:text-white ${
+          onClick={() => setTab("Variables")}
+          className={`lg:text-[13px] text-[12px] font-bold text-zinc-500 hover:text-white ${
             tap === "Variables" &&
             "underline underline-offset-8 decoration-btn decoration-2"
           }`}

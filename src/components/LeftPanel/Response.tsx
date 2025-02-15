@@ -73,7 +73,7 @@ const Response = () => {
   return (
     <>
       {isRequested && (
-        <div className="">
+        <div className="mt-0">
           <div className="flex space-x-4">
             {responseHeader.map((r) => (
               <button

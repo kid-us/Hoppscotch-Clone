@@ -59,7 +59,9 @@ const QueryParameterComponent = () => {
     <>
       {/* Header */}
       <div className="flex justify-between py-2 items-center h-10 mt-1">
-        <p className="text-xs text-zinc-500 font-bold px-4">Query Parameters</p>
+        <p className="lg:text-xs text-[10px] text-zinc-500 font-bold px-4">
+          Query Parameters
+        </p>
         <div className="flex space-x-4">
           <Tippy content="Wiki" placement="top" theme="light">
             <button className="text-zinc-400 hover:text-white">
@@ -98,15 +100,21 @@ const QueryParameterComponent = () => {
         <div key={param.id} className="flex justify-between h-9">
           <div className="border-t border-l border-b border-search-bg w-10"></div>
 
-          <div className="w-full grid grid-cols-9">
+          <div className="w-full grid lg:grid-cols-9 grid-cols-12">
             {["key", "value", "description"].map((field) => (
               <div
                 key={field}
-                className="col-span-3 border-[0.5px] border-search-bg"
+                className={`${
+                  field === "key"
+                    ? "lg:col-span-3 col-span-3"
+                    : field === "value"
+                    ? "lg:col-span-3 col-span-3"
+                    : "lg:col-span-3 col-span-6"
+                } col-span-3 border-[0.5px] border-search-bg`}
               >
                 <input
                   type="text"
-                  className="w-full ps-2 placeholder:text-xs placeholder-zinc-600 placeholder:font-semibold focus:outline-none h-full text-xs"
+                  className="w-full ps-2 placeholder:text-xs placeholder-zinc-600 placeholder:font-semibold focus:outline-none h-full text-xs placeholder:text-[10px]"
                   placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
                   value={param[field as keyof QueryParameter]}
                   onChange={(e) =>

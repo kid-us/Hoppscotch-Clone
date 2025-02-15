@@ -5,6 +5,8 @@ import Footer from "./components/Footer/Footer";
 import Sidebar from "./components/Sidebar/Sidebar";
 import RightPanel from "./components/RightPanel/RightPanel";
 import RouteHeader from "./components/LeftPanel/RouteHeader";
+import IconButton from "./components/IconButton/IconButton";
+import { Globe, Hexagon, Link2, Settings } from "lucide-react";
 
 function App() {
   const [leftWidth, setLeftWidth] = useState(75);
@@ -48,12 +50,48 @@ function App() {
   }, [leftWidth]);
 
   return (
-    <div className="h-screen w-screen">
+    <div className="h-screen w-screen overflow-hidden">
       {/* <Navbar /> */}
-      <div className="flex w-full h-[89dvh] border border-gray-700/30 overflow-hidden">
+      <div className="flex w-full lg:h-[89dvh] h-[93dvh] border border-gray-700/30 overflow-hidden">
         {/* Sidebar */}
+        {/* Large Device */}
         <div className="lg:block hidden w-12" style={{ height: "34%" }}>
           <Sidebar />
+        </div>
+
+        {/* Small Device */}
+        <div className="lg:hidden absolute bottom-0 grid grid-cols-4 w-full">
+          <IconButton
+            name="Rest"
+            direction="top"
+            height="flex justify-center items-center border-t-[3px] border-btn h-[46px] w-full bg-search-bg-hover text-white"
+          >
+            <Link2 size={17} />
+          </IconButton>
+
+          <IconButton
+            name="GraphQL"
+            direction="top"
+            height="flex justify-center items-center h-[46px] w-full hover:bg-search-bg"
+          >
+            <Hexagon size={17} />
+          </IconButton>
+
+          <IconButton
+            name="Realtime"
+            direction="top"
+            height="flex justify-center items-center h-[46px] w-full hover:bg-search-bg"
+          >
+            <Globe size={17} />
+          </IconButton>
+
+          <IconButton
+            name="Settings"
+            direction="top"
+            height="flex justify-center items-center h-[46px] w-full hover:bg-search-bg"
+          >
+            <Settings size={17} />
+          </IconButton>
         </div>
 
         {/* Container */}
