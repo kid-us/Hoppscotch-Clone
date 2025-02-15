@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div className="h-screen w-screen">
-      {/* <Navbar /> */}
+      <Navbar />
       <div className="flex w-full h-[89dvh] border border-gray-700/30 overflow-hidden">
         {/* Sidebar */}
         <div className="lg:block hidden w-12" style={{ height: "34%" }}>
@@ -62,18 +62,20 @@ function App() {
           className="flex w-full border-l border-gray-700/30"
         >
           {/* Left Panel */}
+          {/* Large Device */}
           <div className="lg:block hidden" style={{ width: `${leftWidth}%` }}>
             <RouteHeader />
           </div>
 
-          <div className="lg:hidden">
+          {/* Small Device */}
+          <div className="lg:hidden" style={{ width: `${leftWidth}%` }}>
             <RouteHeader />
           </div>
 
           {/* Resizer */}
           <div
             onMouseDown={startResizing}
-            className="hover:w-[5px] w-[2px] bg-zinc-800/60 cursor-col-resize hover:bg-btn transition-colors h-full"
+            className="lg:block hidden hover:w-[5px] w-[2px] bg-zinc-800/60 cursor-col-resize hover:bg-btn transition-colors h-full"
           />
 
           {/* Right Panel */}
