@@ -49,10 +49,10 @@ function App() {
 
   return (
     <div className="h-screen w-screen">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="flex w-full h-[89dvh] border border-gray-700/30 overflow-hidden">
         {/* Sidebar */}
-        <div className="w-12" style={{ height: "34%" }}>
+        <div className="lg:block hidden w-12" style={{ height: "34%" }}>
           <Sidebar />
         </div>
 
@@ -62,7 +62,11 @@ function App() {
           className="flex w-full border-l border-gray-700/30"
         >
           {/* Left Panel */}
-          <div style={{ width: `${leftWidth}%` }}>
+          <div className="lg:block hidden" style={{ width: `${leftWidth}%` }}>
+            <RouteHeader />
+          </div>
+
+          <div className="lg:hidden">
             <RouteHeader />
           </div>
 
@@ -73,14 +77,14 @@ function App() {
           />
 
           {/* Right Panel */}
-          <div style={{ width: `${rightWidth}%` }}>
+          <div style={{ width: `${rightWidth}%` }} className="lg:flex hidden">
             <RightPanel />
           </div>
         </div>
       </div>
 
       {/* Footer */}
-      <div className="flex justify-between items-center h-[4.5dvh] px-2">
+      <div className="lg:flex hidden justify-between items-center h-[4.5dvh] px-2">
         <Footer />
       </div>
     </div>

@@ -110,7 +110,7 @@ const RouteHeader = () => {
       {/* HEADERS and TAPS SECTION */}
       <div className="bg-search-bg-hover h-[46px] pe-3">
         <div className="grid grid-cols-9">
-          <div className="flex  items-center h-[50px] relative col-span-7">
+          <div className="flex items-center h-[50px] relative col-span-7">
             <div
               className="flex items-center h-[50px] overflow-x-auto"
               ref={containerRef}
