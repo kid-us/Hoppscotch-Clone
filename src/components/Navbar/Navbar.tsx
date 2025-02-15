@@ -14,7 +14,10 @@ const Navbar = () => {
 
       <header className="grid grid-cols-5 p-2 gap-x-4 h-[6.5dvh]">
         <div className="col-span-2">
-          <a href="/" className="uppercase text-[13px] font-bold ms-3">
+          <a
+            href="/"
+            className="uppercase lg:text-[13px] text-[12px] font-bold ms-3"
+          >
             hoppscotch
           </a>
         </div>

@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div className="h-screen w-screen overflow-hidden">
-      {/* <Navbar /> */}
+      <Navbar />
       <div className="flex w-full lg:h-[89dvh] h-[93dvh] border border-gray-700/30 overflow-hidden">
         {/* Sidebar */}
         {/* Large Device */}
