@@ -236,7 +236,7 @@ const RouteHeader = () => {
           </div>
 
           {/* Send */}
-          <div className="col-span-2 flex lg:mt-0 mt-2 lg:h-full h-8 justify-between items-center">
+          <div className="lg:col-span-1 col-span-2 flex lg:mt-0 mt-2 lg:h-full h-8 justify-between items-center">
             <Tippy
               content={
                 <span className="text-[10px] font-semibold">
